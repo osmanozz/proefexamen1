@@ -4,14 +4,11 @@ $db = new database();
 
 if (isset($_GET['id'])) {
 
-    $product_code = $_GET['id'];
-    $sql = "DELETE FROM amsterdam WHERE productcode=:id";
+    $id = $_GET['id'];
+    $sql = "DELETE FROM product WHERE product_id=:product_id";
     $placeholder = [
-        'id'=> $product_code
+        'product_id'=> $id
     ];
-    $db->delete($sql, $placeholder, "overzicht-amsterdam.php");
+    $db->delete($sql, $placeholder, "product-overzicht.php");
 }
-
-
-
 ?>

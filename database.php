@@ -11,7 +11,7 @@ class database{
         $this->host = 'localhost';
         $this->username = 'root';
         $this->password = 'Osmanosman1.';
-        $this->database = 'catchmorefish';
+        $this->database = 'morefish';
 
         try {
             $dsn = "mysql:host=$this->host;dbname=$this->database";
@@ -68,7 +68,7 @@ class database{
         $stmt = $this->dbh->prepare($sql);
         $stmt->execute($placeholder);
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+        
         if(!empty($result)){
             return $result;
         }

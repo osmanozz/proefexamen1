@@ -5,22 +5,25 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Overzicht voorraad</title>
+        <title>Edit product</title>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
+
+        
+            
         <?php
 
         function create_table($dataset, $from){
        
         if(is_array($dataset) && !empty($dataset)){ 
             // naam van de id kolom per table
-            $key = $from."_naam";
-          
+            $key = $from."_id";
             ?>
 
             <table class="table table-striped">
-            <caption style="caption-side:top"><h2>Overzicht Voorraad</h2></caption>
+            <caption style="caption-side:top"><h2>Overzicht Product</h2></caption>
+            
             
             <?php 
             // haal de keys van de array op; dit zijn de kolomnamen
@@ -44,10 +47,13 @@
                         
                         <td><?php echo $rowdata; ?></td>
                     <?php } ?>
-                    
 
                     <td>
-                        <a href="delete-<?php echo $from?>.php?filiaal_naam=<?php echo $row_id; ?>" class="btn btn-danger" >Delete</a>
+                        <a href="edit-<?php echo $from?>.php?id=<?php echo $row_id; ?>" class="btn btn-secondary" >Edit</a>
+                    </td>
+                    
+                    <td>
+                        <a href="delete-<?php echo $from?>.php?id=<?php echo $row_id; ?>" class="btn btn-danger" >Delete</a>
                     </td>
                     </tr>
             <?php }

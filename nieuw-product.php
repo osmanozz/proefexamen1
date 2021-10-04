@@ -6,16 +6,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once 'database.php';
     $db = new database();
 
-    $sql = "INSERT INTO amsterdam VALUES (:product_code, :naam, :inkoop_waarde, :verkoop_waarde, :voorraad_zoutermeer, 
-    :voorraad_amsterdam, :voorraad_rotterdam)";
+    $sql = "INSERT INTO product VALUES (:product_id, :product_naam, :type, :fabriek, :waarde_inkoop, :waarde_verkoop)"; 
     $placeholder = [
-    'product_code'=> NULL,
-    'naam'=> $_POST['naam'],
-    'inkoop_waarde'=> $_POST['inkoop'],
-    'verkoop_waarde'=> $_POST['verkoop'],
-    'voorraad_zoutermeer'=> $_POST['zouter'],
-    'voorraad_amsterdam'=> $_POST['ams'],
-    'voorraad_rotterdam'=> $_POST['rotter'],
+    'product_id'=> NULL,
+    'product_naam'=> $_POST['naam'],
+    'type' => $_POST['type'],
+    'fabriek'=> $_POST['fabriek'],
+    'waarde_inkoop'=> $_POST['inkoop'],
+    'waarde_verkoop'=> $_POST['verkoop']
 ];
 $db->insert($sql, $placeholder, "overzicht-amsterdam.php");
 
@@ -36,11 +34,10 @@ if($db) {
 <body>
     <form method="POST">
         <input type="text" name="naam" placeholder="naam" required>
+        <input type="text" name="type" placeholder="type" required>
+        <input type="text" name="fabriek" placeholder="fabriek"required>
         <input type="int" name="inkoop" placeholder="inkoop" required>
         <input type="int" name="verkoop" placeholder="verkoop" required>
-        <input type="int" name="zouter" placeholder="zoutermeer">
-        <input type="int" name="ams" placeholder="amsterdam" >
-        <input type="int" name="rotter" placeholder="rotterdam">
         <input type="submit" value="Verzenden">
     </form>
 </body>

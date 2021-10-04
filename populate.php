@@ -2,10 +2,9 @@
 
 include "database.php";
 
-$sql = "INSERT INTO medewerker VALUES (:id, :naam, :username, :password)";
+$sql = "INSERT INTO medewerker VALUES (:id, :username, :password)";
 $placeholder = [
     'id'=> NULL,
-    'naam'=> NULL,
     'username'=> 'medewerker',
     'password'=> password_hash('medewerker', PASSWORD_DEFAULT)
 ]; 
