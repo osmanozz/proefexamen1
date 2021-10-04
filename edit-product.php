@@ -1,9 +1,6 @@
-
-    <?php
+<?php
     include_once "database.php";
     $db = new database();
-   
-        
   
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
 
@@ -14,22 +11,22 @@
             $waarde_inkoop= $_POST['waarde_inkoop'];
             $waarde_verkoop = $_POST['waarde_verkoop'];
            
-            $sql = "UPDATE product SET naam=:naam,type=:type,
-            fabriek=:fabriek,waarde_inkoop=:waarde_inkoop,
-            waarde_verkoop=:waarde_verkoop
-            WHERE product_id=:product_id";
+                $sql = "UPDATE product SET product_naam=:product_naam,type=:type,
+                fabriek=:fabriek,waarde_inkoop=:waarde_inkoop,
+                waarde_verkoop=:waarde_verkoop
+                WHERE product_id=:product_id";
 
-            $placeholders = [
-                'product_id' => $product_id,
-                'product_naam' => $product_naam,
-                'type'=> $type,
-                'fabriek' => $fabriek,
-                'waarde_inkoop' => $waarde_inkoop,
-                'waarde_verkoop'=>$waarde_verkoop
-            ];
-            $db->edit($sql,$placeholders, "product-overzicht.php");
+                    $placeholders = [
+                        'product_id' => $product_id,
+                        'product_naam' => $product_naam,
+                        'type'=> $type,
+                        'fabriek' => $fabriek,
+                        'waarde_inkoop' => $waarde_inkoop,
+                        'waarde_verkoop'=>$waarde_verkoop
+                    ];
+                    $db->edit($sql,$placeholders, "product-overzicht.php");
         }
-        ?>
+?>
 
 <form method="POST">         
         <input type="hidden" name="product_id" value="<?php echo $_GET['id'] ?>">

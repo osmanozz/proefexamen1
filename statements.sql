@@ -23,7 +23,6 @@ CREATE TABLE filiaal(
     filiaal_naam varchar(255) NOT NULL,
     product_id int,
     aantal_product int NOT NULL,
-    totaal_locatie decimal(6,2) NOT NULL,
     PRIMARY KEY (filiaal_id),
     FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 );

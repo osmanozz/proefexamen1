@@ -18,7 +18,7 @@ class database{
             $this->dbh = new PDO($dsn, $this->username, $this->password);
 
         } catch (PDOException $exception) {
-            die("Connection failed!-> " . $exception.getMessage());
+            die("Connection failed!-> ".$exception.getMessage());
         }
     }
         
