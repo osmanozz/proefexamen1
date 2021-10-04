@@ -6,11 +6,14 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once 'database.php';
     $db = new database();
 
+    $username = hash("md5",$_POST['username']);
+    $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
+
     $sql = "INSERT INTO medewerker VALUES (:id, :username, :password)";
     $placeholders = [
     'id'=> NULL,
-    'username'=> $_POST['username'],
-    'password'=> password_hash($_POST['password'],PASSWORD_DEFAULT),
+    'username'=> $username,
+    'password'=> $password,
 ];
 $db->insert($sql, $placeholders, "overzicht-amsterdam.php");
 if($db) {
