@@ -167,6 +167,7 @@ create_table($act, 'filiaal');
 
 <div class="image">
     <?PHP echo "INGELOGD: " . $_SESSION['username'];?>
-    <a class="btn btn-danger" href="login.php">Log uit</a>
+    <a class="btn btn-danger" href="login.php">Log uit</a> <br><br>
+    <a class="btn btn-secondary" href="nieuw-medewerker.php">Nieuw medewerker toevoegen</a>
         <img src="logo.png">
 </div>

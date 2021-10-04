@@ -23,6 +23,8 @@ if($db) {
 }
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
