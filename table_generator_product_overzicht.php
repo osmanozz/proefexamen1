@@ -33,12 +33,12 @@
             <tr>
                 <?php foreach($columns as $column){ ?>
                     <th>
-                        <strong>
+                        <h3>
                             <?php echo $column?>
-                        </strong>
+                        </h3>
                     </th>
                 <?php } ?>
-                <th colspan="2">action</th>
+                <th colspan="2"><h2>Action</h2></th>
             </tr>
                 <?php foreach($dataset as $rows=>$row){ 
                     $row_id = $row[$key]; ?>

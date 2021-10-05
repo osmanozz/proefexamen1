@@ -28,7 +28,7 @@ create_table($act, 'product');
     <?PHP echo "INGELOGD: " . $_SESSION['username'];?>
     <a class="btn btn-primary" href="login.php">Log uit</a>
         <img src="logo.png">
-        <a class="btn btn-primary" href="overzicht-amsterdam.php">Ga naar Overzicht voorraad</a>
+        <a class="btn btn-primary" href="overzicht-amsterdam.php">Ga Naar Voorraad Overzicht </a>
         
 </div>
 <br><br><br><br><br><br>

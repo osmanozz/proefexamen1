@@ -4,7 +4,12 @@ require_once 'database.php';
 include 'table_generator.php';
 $db = new database();
 session_start();
+?>
 
+<div class="card-header">
+<div class="card-body">
+
+<?php
 
 // SELECT DE BEPAALDE KOLOMMEN VAN DE TABEL PRODUCT EN FILIAAL
 $act = $db->select("SELECT product.product_id, product.product_naam, product.type, product.fabriek, 
@@ -122,7 +127,10 @@ foreach ($geheleWaardeInkoop as $hele) {
                 echo "<br>";
             }
 }
-
+?>
+</div>
+</div>
+<?php
 
 create_table($act, 'filiaal');
 
@@ -133,27 +141,15 @@ create_table($act, 'filiaal');
  echo "<br>";
  echo "<br>";
  echo "<br>";
-// ?>
- </div>
-
-<div class="containerverkoop"> 
- <?php
-
-
-?>
-</div>
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
 
      
 </head>
-<body>
-    
-</body>
 </html>
 
 
@@ -168,8 +164,8 @@ create_table($act, 'filiaal');
         <a class="btn btn-success" href="nieuw-product-filiaal.php">Nieuw product aan de filiaal toevoegen</a>
 
 <div class="image">
-    <?PHP echo "INGELOGD: " . $_SESSION['username'];?>
-    <a class="btn btn-danger" href="login.php">Log uit</a> <br><br>
     <a class="btn btn-secondary" href="nieuw-medewerker.php">Nieuw medewerker toevoegen</a>
-        <img src="logo.png">
+        <img src="logo.png"> <br>
+        <?PHP echo "Welkom: " . $_SESSION['username'];?>
+        <a class="btn btn-danger" href="login.php">Log uit</a> <br>
 </div>

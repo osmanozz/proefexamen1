@@ -1,16 +1,31 @@
-<form  method="POST">
-        <h1>Inloggen admin</h1>
-        
-        <fieldset>
-          <label for="name">Gebruikersnaam:</label>
-          <input type="text" id="name" name="username" required>
-          
-          <label for="password">Wachtwoord:</label>
-          <input type="password" id="mail" name="password" required>
-        
-        <input type="submit" name="submit">
- </form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+</head>
+<body>
+  
 
+<div class="card text-center">
+  <div class="card-header">
+    <div class="card-body">
+    <h2 class="text-muted">ADMIN</h2>
+</div>
+            <div class="card-body">
+        <form method="POST">
+          <label for="name">Gebruikersnaam:</label>
+          <input class="rounded" type="text" id="name" name="username" required>
+          <br> <br>
+          <label for="password">Wachtwoord:</label>
+          <input class="rounded" type="password" id="mail" name="password" required>
+          <br> <br>
+        <input class="btn btn-primary" type="submit" name="submit" value="LOGIN">
+        </form>
+      </div>
+    </div>
+  </div>
+
+ </body>
 <?php
 
 include "database.php";
