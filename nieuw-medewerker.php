@@ -6,6 +6,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once 'database.php';
     $db = new database();
 
+    // USERNAME AND PASSWORD WORDEN GEHASHED 
+    
     $username = hash("md5",$_POST['username']);
     $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
 

@@ -20,6 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST'){
   $username = $_POST['username'];
   $password = $_POST['password'];
 
+  // USERNAME AND PASSWORD WORDT GEHASHED
   $username = stripcslashes($username);  
   $password = stripcslashes($password);  
 

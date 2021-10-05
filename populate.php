@@ -1,7 +1,9 @@
 <?php
 
+
 include "database.php";
 
+// ER WORDT AUTOMATISCH EEN USER AANGEMAAKT IN DE DATABASE.
 $sql = "INSERT INTO medewerker VALUES (:id, :username, :password)";
 $placeholder = [
     'id'=> NULL,

@@ -10,11 +10,11 @@
     </head>
     <body>
         <?php
-
+    
         function create_table($dataset, $from){
        
         if(is_array($dataset) && !empty($dataset)){ 
-            // naam van de id kolom per table
+            // NAAM VAN DE KOLOM DIE JE WILT OPHALEN NAAR DE URL
             $key = $from."_naam";
           
             ?>
@@ -23,7 +23,7 @@
             <caption style="caption-side:top"><h2>Overzicht Voorraad</h2></caption>
             
             <?php 
-            // haal de keys van de array op; dit zijn de kolomnamen
+            // DE KOLOMNAMEN WORDEN OPGEHAALD
             $columns = array_keys($dataset[0]);
             ?>
             

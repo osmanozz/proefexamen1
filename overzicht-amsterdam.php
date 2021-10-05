@@ -6,7 +6,9 @@ $db = new database();
 session_start();
 
 
-$act = $db->select("SELECT product.product_id, product.product_naam, product.type, product.fabriek, product.waarde_inkoop, product.waarde_verkoop,
+// SELECT DE BEPAALDE KOLOMMEN VAN DE TABEL PRODUCT EN FILIAAL
+$act = $db->select("SELECT product.product_id, product.product_naam, product.type, product.fabriek, 
+product.waarde_inkoop, product.waarde_verkoop,
 filiaal.filiaal_naam, filiaal.aantal_product
  FROM product
  INNER JOIN filiaal ON product.product_id = filiaal.product_id");

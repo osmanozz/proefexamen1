@@ -1,5 +1,6 @@
 <?php
 
+// DATABASE CONNECTION
 class database{
     private $host;
     private $username;
@@ -22,6 +23,7 @@ class database{
         }
     }
         
+        // CREATE
        public function insert($sql, $placeholder, $location=NULL) {
 
         try {
@@ -35,7 +37,7 @@ class database{
             throw $e;
         }
        }
-
+        //LOGIN
        public function login($username, $password) {
 
             $sql = "SELECT id, username, password FROM medewerker WHERE username= :username";
@@ -64,6 +66,7 @@ class database{
        }
     }
 
+    // SELECT
     public function select($sql, $placeholder = []){
         $stmt = $this->dbh->prepare($sql);
         $stmt->execute($placeholder);
@@ -75,13 +78,13 @@ class database{
 
         return;
     }
-
+    // UPDATE
     public function edit($sql, $placeholder, $file) {
         $stmt = $this->dbh->prepare($sql);
         $stmt->execute($placeholder);
         header("location: " . $file);
     }
-    
+    // DELETE
     public function delete($sql, $placeholder, $file) {
 
         $statement = $this->dbh->prepare($sql);
