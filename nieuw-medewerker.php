@@ -11,16 +11,18 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = hash("md5",$_POST['username']);
     $password = password_hash($_POST['password'],PASSWORD_DEFAULT);
 
-    $sql = "INSERT INTO medewerker VALUES (:id, :username, :password)";
-    $placeholders = [
-    'id'=> NULL,
-    'username'=> $username,
-    'password'=> $password,
-];
-$db->insert($sql, $placeholders, "overzicht-amsterdam.php");
-if($db) {
-    header("Location:overzicht-amsterdam.php");
-}
+        $sql = "INSERT INTO medewerker VALUES (:id, :username, :password)";
+            $placeholders = [
+            'id'=> NULL,
+            'username'=> $username,
+            'password'=> $password,
+            ];
+
+                $db->insert($sql, $placeholders, "overzicht-amsterdam.php");
+                
+                    if($db) {
+                        header("Location:overzicht-amsterdam.php");
+                    }
 }
 
 
@@ -37,15 +39,15 @@ if($db) {
 <div class="card text-center">
   <div class="card-header">
     <div class="card-body">
-    <form method="POST">
-    USERNAME : <input type="text" name="username" placeholder="USERNAME" required><br> <br>
-    PASSWORD : <input type="password" name="password" placeholder="PASSWORD" required><br><br>
-        <input type="submit" value="Toevogen">
+        <form method="POST">
+            USERNAME : <input type="text" name="username" placeholder="USERNAME" required><br> <br>
+            PASSWORD : <input type="password" name="password" placeholder="PASSWORD" required><br><br>
+            <input class="btn btn-primary" type="submit" value="Toevogen">
+        </form>
 
-    </form>
+</div>
     </div>
-    </div>
-  </div>
+        </div>
     <br>
     <br>
     <br>

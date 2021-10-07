@@ -54,7 +54,6 @@ class database{
                 if($username && password_verify($password, $result['password'])){
 
                     session_start();
-                    $_SESSION['id'] = $result['medewerkercode'];
                     $_SESSION['username'] = $result['username'];
                     $_SESSION['is_logged_in'] = true;
                     
@@ -62,6 +61,7 @@ class database{
     
                 }else{
                     echo 'Username or password is incorrect.';
+                    exit();
                 }
        }
     }

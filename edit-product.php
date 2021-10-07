@@ -24,7 +24,7 @@
                         'waarde_inkoop' => $waarde_inkoop,
                         'waarde_verkoop'=>$waarde_verkoop
                     ];
-                    $db->edit($sql,$placeholders, "product-overzicht.php");
+                        $db->edit($sql,$placeholders, "product-overzicht.php");
         }
 ?>
 

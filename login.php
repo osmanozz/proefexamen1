@@ -12,15 +12,16 @@
     <h2 class="text-muted">ADMIN</h2>
 </div>
             <div class="card-body">
-        <form method="POST">
-          <label for="name">Gebruikersnaam:</label>
-          <input class="rounded" type="text" id="name" name="username" required>
-          <br> <br>
-          <label for="password">Wachtwoord:</label>
-          <input class="rounded" type="password" id="mail" name="password" required>
-          <br> <br>
-        <input class="btn btn-primary" type="submit" name="submit" value="LOGIN">
+              <form method="POST">
+                <label for="username">Gebruikersnaam:</label>
+                <input class="rounded" type="text" name="username" required>
+              <br> <br>
+                    <label for="password">Wachtwoord:</label>
+                    <input class="rounded" type="password" name="password" required>
+              <br> <br>
+                      <input class="btn btn-primary" type="submit" name="submit" value="LOGIN">
         </form>
+
       </div>
     </div>
   </div>
@@ -33,15 +34,14 @@ include "database.php";
 if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
   $username = $_POST['username'];
-  $password = $_POST['password'];
+    $password = $_POST['password'];
 
-  // USERNAME AND PASSWORD WORDT GEHASHED
-  $username = stripcslashes($username);  
-  $password = stripcslashes($password);  
+      // USERNAME AND PASSWORD WORDT GEHASHED
+      $username = stripcslashes($username);  
+        $password = stripcslashes($password);  
 
-      
-      $db = new database();
-      $db->login($username, $password);      
+            $db = new database();
+              $db->login($username, $password);      
   }
 
 
