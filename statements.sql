@@ -3,14 +3,14 @@ CREATE DATABASE morefish;
 USE morefish;
 
 CREATE TABLE overzicht (
-    overzicht_id INTEGER AUTO_INCREMENT,
+    overzicht_id INTEGER AUTO_INCREMENT NOT NULL,
     datum date,
     eind_totaal decimal(6,2),
     PRIMARY KEY (overzicht_id)
 );
 
 CREATE TABLE product(
-    product_id INTEGER AUTO_INCREMENT,
+    product_id INTEGER AUTO_INCREMENT NOT NULL,
     product_naam varchar(255) NOT NULL,
     type varchar(255) NOT NULL,
     fabriek varchar(255) NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE product(
     PRIMARY KEY (product_id)
 );
 CREATE TABLE filiaal(
-    filiaal_id int AUTO_INCREMENT,
+    filiaal_id int AUTO_INCREMENT NOT NULL,
     filiaal_naam varchar(255) NOT NULL,
     product_id int,
     aantal_product int NOT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE filiaal(
     FOREIGN KEY (product_id) REFERENCES product(product_id) ON DELETE CASCADE
 );
 CREATE TABLE bestellijst(
-    lijst_id INTEGER AUTO_INCREMENT,
+    lijst_id INTEGER AUTO_INCREMENT NOT NULL,
     product_id INTEGER,
     filiaal_id INTEGER,
     datum date,
